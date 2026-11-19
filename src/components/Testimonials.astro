@@ -1,0 +1,208 @@
+---
+// Member Stories / Testimonials Component for Vortex Padel Club
+---
+
+<section class="testimonials-section" id="stories">
+  <div class="container testimonials-container">
+    <!-- Header with Title & Arrow Controls -->
+    <div class="testimonials-header">
+      <div class="testimonials-title-group">
+        <span class="badge-pill badge-pill-light">Testimonials</span>
+        <h2 class="title-h2 testimonials-title">What Our Members Say</h2>
+      </div>
+
+      <div class="testimonial-arrows">
+        <button type="button" class="btn-circle-mini test-nav-btn" aria-label="Previous story" id="test-prev-btn">
+          <span>‹</span>
+        </button>
+        <button type="button" class="btn-circle-mini-dark test-nav-btn active-arrow" aria-label="Next story" id="test-next-btn">
+          <span>›</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Testimonial Feature Card -->
+    <div class="testimonial-card card-rounded" id="testimonial-slider">
+      <!-- Athlete Photo Left -->
+      <div class="testimonial-photo-wrap">
+        <img 
+          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+          alt="Marina S., Vortex Padel Club member"
+          class="testimonial-athlete-img" 
+          id="testimonial-author-img"
+          loading="lazy"
+        />
+        <div class="athlete-badge-overlay">
+          <span class="badge-pill badge-pill-glass">Club Member</span>
+        </div>
+      </div>
+
+      <!-- Quote Content Right -->
+      <div class="testimonial-content-wrap">
+        <div class="quote-icon" aria-hidden="true">
+          <svg width="44" height="34" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.8 0C5.7 0 0 5.7 0 12.8C0 23.3 8.3 32.5 20.3 33.7V25.2C14.7 24.2 10.4 19.4 10.4 14.9C11.1 15.1 11.9 15.2 12.8 15.2C18.5 15.2 23.1 10.6 23.1 4.9C23.1 2.2 20.9 0 12.8 0ZM33.7 0C26.6 0 20.9 5.7 20.9 12.8C20.9 23.3 29.2 32.5 41.2 33.7V25.2C35.6 24.2 31.3 19.4 31.3 14.9C32 15.1 32.8 15.2 33.7 15.2C39.4 15.2 44 10.6 44 4.9C44 2.2 41.8 0 33.7 0Z" fill="#1D4ED8" fill-opacity="0.85"/>
+          </svg>
+        </div>
+
+        <blockquote class="testimonial-quote" id="testimonial-quote-text">
+          "Joining the padel club has been the best decision for my free time. The atmosphere is amazing, and every match brings excitement and new friends!"
+        </blockquote>
+
+        <div class="testimonial-footer">
+          <div class="author-info">
+            <p class="author-name" id="testimonial-author-name">Marina S.</p>
+            <p class="author-role">Club Member (Gold Tier)</p>
+          </div>
+
+          <!-- Pagination + Next member thumbnail preview -->
+          <div class="testimonial-counter-badge">
+            <span class="counter-text" id="testimonial-counter">1/8</span>
+            <img 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" 
+              alt="Next member" 
+              class="next-preview-avatar"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding-block: var(--section-spacing);
+    background-color: var(--color-surface-light);
+  }
+
+  .testimonials-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+  }
+
+  .testimonials-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .testimonials-title {
+    color: var(--color-dark-panel);
+  }
+
+  .testimonial-arrows {
+    display: flex;
+    gap: 10px;
+  }
+
+  .active-arrow {
+    background: var(--color-dark-panel);
+    color: #ffffff;
+  }
+
+  /* Testimonial Feature Card */
+  .testimonial-card {
+    background: var(--color-surface-white);
+    box-shadow: var(--shadow-lg);
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    min-height: 440px;
+    border: 1px solid var(--color-border-subtle);
+  }
+
+  .testimonial-photo-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-athlete-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .testimonial-card:hover .testimonial-athlete-img {
+    transform: scale(1.04);
+  }
+
+  .athlete-badge-overlay {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+  }
+
+  .testimonial-content-wrap {
+    padding: clamp(32px, 5vw, 56px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+  }
+
+  .quote-icon {
+    display: inline-block;
+  }
+
+  .testimonial-quote {
+    font-size: clamp(1.15rem, 2vw, 1.6rem);
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--color-dark-panel);
+    letter-spacing: -0.01em;
+  }
+
+  .testimonial-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border-subtle);
+  }
+
+  .author-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-dark-panel);
+  }
+
+  .author-role {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+  }
+
+  .testimonial-counter-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--color-surface-card);
+    padding: 6px 8px 6px 14px;
+    border-radius: var(--radius-pill);
+  }
+
+  .counter-text {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-dark-panel);
+  }
+
+  .next-preview-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .testimonial-card {
+      grid-template-columns: 1fr;
+    }
+    .testimonial-photo-wrap {
+      height: 320px;
+    }
+  }
+</style>

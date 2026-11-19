@@ -1,0 +1,346 @@
+---
+// Experience Section Component for Vortex Padel Club
+---
+
+<section class="experience-section" id="courts">
+  <div class="container experience-container">
+    <div class="experience-grid">
+      <!-- Left Column: Dark Cinematic Card -->
+      <div class="night-court-card card-rounded">
+        <div class="night-card-top">
+          <div class="night-card-header">
+            <h3 class="night-card-title title-h3">
+              Premium Padel Courts for Training and Play
+            </h3>
+            <p class="night-card-subtext text-body-dark">
+              Our courts are designed for both individual and group sessions.
+            </p>
+          </div>
+          <button type="button" class="night-card-cta open-booking-trigger">
+            <span>Book a court</span>
+            <span class="arrow-icon">↗</span>
+          </button>
+        </div>
+
+        <!-- Night Court Arena Visual -->
+        <div class="night-court-visual">
+          <img 
+            src="https://images.unsplash.com/photo-1542446608-e9525230faed?auto=format&fit=crop&w=900&q=80" 
+            alt="Illuminated championship padel court with blue turf and glass walls"
+            class="night-court-img"
+            loading="lazy"
+          />
+          
+          <!-- Bottom controls over visual -->
+          <div class="night-visual-footer">
+            <span class="pagination-indicator" id="court-pagination">1/8</span>
+            <div class="night-nav-arrows">
+              <button type="button" class="btn-circle-mini-dark" aria-label="Previous court" id="night-prev-btn">
+                <span>‹</span>
+              </button>
+              <button type="button" class="btn-circle-mini-dark" aria-label="Next court" id="night-next-btn">
+                <span>›</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Gear Zoom & Club Facilities Narrative -->
+      <div class="gear-experience-col">
+        <div class="gear-header">
+          <h2 class="experience-title title-h2">
+            Experience the Best<br />in Padel and More
+          </h2>
+        </div>
+
+        <div class="gear-content-layout">
+          <!-- Gear Zoom Photo Card with '+' Button -->
+          <div class="gear-photo-card card-rounded">
+            <img 
+              src="https://images.unsplash.com/photo-1657704358775-ed705c7388d2?auto=format&fit=crop&w=700&q=80" 
+              alt="FZ Forza carbon perforated padel racket with yellow ball in front of glass court"
+              class="gear-img"
+              loading="lazy"
+            />
+            <!-- Circular '+' action button -->
+            <button 
+              type="button" 
+              class="btn-circle btn-circle-dark gear-plus-btn" 
+              id="gear-info-trigger"
+              aria-label="View Pro Gear Rental Details"
+            >
+              <span class="plus-icon">+</span>
+            </button>
+            
+            <div class="gear-pill-tag">
+              <span class="badge-pill badge-pill-glass">Pro Gear</span>
+            </div>
+          </div>
+
+          <!-- Narrative Text -->
+          <div class="gear-narrative">
+            <p class="gear-text text-body">
+              Our facilities feature state-of-the-art padel courts, training zones, and spaces for tournaments or casual games. A place where sport and leisure come together perfectly.
+            </p>
+            <ul class="gear-perks">
+              <li class="perk-item">
+                <span class="perk-check">✓</span>
+                <span>Tournament-grade LED shadowless lighting (1000 Lux)</span>
+              </li>
+              <li class="perk-item">
+                <span class="perk-check">✓</span>
+                <span>Pro shop racket demo center (Bullpadel, Head, Nox)</span>
+              </li>
+              <li class="perk-item">
+                <span class="perk-check">✓</span>
+                <span>Certified FIP coaches for all skill levels</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-section {
+    padding-block: var(--section-spacing);
+    background-color: var(--color-surface-white);
+  }
+
+  .experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 60px);
+    align-items: center;
+  }
+
+  /* Left Dark Card */
+  .night-court-card {
+    background: var(--color-dark-panel);
+    color: #ffffff;
+    padding: clamp(24px, 4vw, 36px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 16px 40px rgba(11, 18, 32, 0.25);
+    height: 100%;
+  }
+
+  .night-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .night-card-title {
+    color: #ffffff;
+    max-width: 320px;
+  }
+
+  .night-card-subtext {
+    margin-top: 8px;
+    max-width: 300px;
+  }
+
+  .night-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-neon);
+    white-space: nowrap;
+    padding: 8px 12px;
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+  }
+
+  .night-card-cta:hover {
+    background: rgba(212, 247, 44, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .night-court-visual {
+    position: relative;
+    border-radius: var(--radius-card-sm);
+    overflow: hidden;
+    height: 320px;
+  }
+
+  .night-court-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .night-court-card:hover .night-court-img {
+    transform: scale(1.04);
+  }
+
+  .night-visual-footer {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .pagination-indicator {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(11, 18, 32, 0.7);
+    backdrop-filter: blur(8px);
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+  }
+
+  .night-nav-arrows {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn-circle-mini-dark {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(11, 18, 32, 0.75);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .btn-circle-mini-dark:hover {
+    background: var(--color-neon);
+    color: var(--color-dark-panel);
+  }
+
+  /* Right Gear Column */
+  .gear-experience-col {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .experience-title {
+    color: var(--color-dark-panel);
+  }
+
+  .gear-content-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .gear-photo-card {
+    position: relative;
+    height: 340px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .gear-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .gear-photo-card:hover .gear-img {
+    transform: scale(1.05);
+  }
+
+  .gear-plus-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .gear-plus-btn:hover {
+    background: var(--color-neon);
+    color: var(--color-dark-panel);
+  }
+
+  .plus-icon {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .gear-pill-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .gear-narrative {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .gear-text {
+    line-height: 1.6;
+  }
+
+  .gear-perks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .perk-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-text-main);
+  }
+
+  .perk-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(29, 78, 216, 0.1);
+    color: var(--color-court-blue);
+    font-weight: 700;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .experience-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .gear-content-layout {
+      grid-template-columns: 1fr;
+    }
+    .gear-photo-card {
+      height: 280px;
+    }
+  }
+</style>

@@ -1,0 +1,265 @@
+---
+// About Section Component for Vortex Padel Club
+---
+
+<section class="about-section" id="about">
+  <div class="container about-container">
+    <div class="about-grid">
+      <!-- Left Column: Copy & Value Proposition -->
+      <div class="about-intro">
+        <div class="about-badge-wrap">
+          <span class="badge-pill badge-pill-light">About Padel Club</span>
+        </div>
+        
+        <h2 class="about-title title-h2">
+          At our padel center, we bring sport and community together.
+        </h2>
+        
+        <p class="about-description text-body">
+          From beginners taking their first swing to seasoned tournament players – everyone can find their place, their passion, and their partners here. Engineered with world-class panoramic glass, WPT-grade blue artificial turf, and a social sanctuary that extends well beyond the final set.
+        </p>
+
+        <div class="about-action-wrap">
+          <a href="#contact" class="btn-primary-dark">
+            <span>Get in touch</span>
+            <span class="arrow-icon">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Asymmetric Dual Cards -->
+      <div class="about-cards-wrap">
+        <!-- Card 1: Outdoor Panoramic Court -->
+        <div class="about-card outdoor-card card-rounded">
+          <img 
+            src="https://images.unsplash.com/photo-1709587824751-dd30420f5cf3?auto=format&fit=crop&w=800&q=80" 
+            alt="Outdoor panoramic glass padel court with bright blue turf"
+            class="about-card-img" 
+            loading="lazy"
+          />
+          <div class="about-card-overlay">
+            <span class="badge-pill badge-pill-glass">Outdoor area</span>
+            <div class="card-bottom-row">
+              <p class="card-bottom-text">
+                A space for training, relaxing, and friendly matches
+              </p>
+              <button type="button" class="btn-circle btn-circle-white card-action-circle open-booking-trigger" aria-label="Book Outdoor Court">
+                <span class="circle-icon">↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Indoor Court & Action -->
+        <div class="about-card-stack">
+          <div class="about-card indoor-card card-rounded">
+            <img 
+              src="https://images.unsplash.com/photo-1791856423293-3b5433845876?auto=format&fit=crop&w=700&q=80" 
+              alt="Padel player on blue indoor court with glass enclosure"
+              class="about-card-img" 
+              loading="lazy"
+            />
+            <div class="about-card-overlay">
+              <span class="badge-pill badge-pill-glass">Indoor courts</span>
+              <span class="court-tag">Court #04</span>
+            </div>
+          </div>
+
+          <!-- Description and mini-carousel navigation below card 2 -->
+          <div class="indoor-card-footer">
+            <p class="indoor-footer-text">
+              Discover your new favorite place – play, train, and compete.
+            </p>
+            <div class="carousel-nav-arrows">
+              <button type="button" class="btn-circle-mini" aria-label="Previous court view" id="about-prev-btn">
+                <span>‹</span>
+              </button>
+              <button type="button" class="btn-circle-mini" aria-label="Next court view" id="about-next-btn">
+                <span>›</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding-block: var(--section-spacing);
+    background-color: var(--color-surface-light);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(32px, 5vw, 64px);
+    align-items: center;
+  }
+
+  /* Left Column */
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-title {
+    color: var(--color-dark-panel);
+    max-width: 520px;
+  }
+
+  .about-description {
+    max-width: 480px;
+  }
+
+  .about-action-wrap {
+    margin-top: 10px;
+  }
+
+  /* Right Column Asymmetric Cards */
+  .about-cards-wrap {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 24px;
+    align-items: end;
+  }
+
+  .about-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .outdoor-card {
+    height: 440px;
+  }
+
+  .indoor-card {
+    height: 340px;
+  }
+
+  .about-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .about-card:hover .about-card-img {
+    transform: scale(1.05);
+  }
+
+  .about-card-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(11, 18, 32, 0.3) 0%, rgba(11, 18, 32, 0.05) 50%, rgba(11, 18, 32, 0.75) 100%);
+  }
+
+  .card-bottom-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .card-bottom-text {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.35;
+    max-width: 200px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-action-circle {
+    flex-shrink: 0;
+  }
+
+  .circle-icon {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .court-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .about-card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .indoor-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 4px;
+  }
+
+  .indoor-footer-text {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    max-width: 200px;
+  }
+
+  .carousel-nav-arrows {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .btn-circle-mini {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(226, 232, 240, 0.8);
+    color: var(--color-dark-panel);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .btn-circle-mini:hover {
+    background: var(--color-dark-panel);
+    color: #ffffff;
+  }
+
+  @media (max-width: 1024px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    .about-cards-wrap {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .about-cards-wrap {
+      grid-template-columns: 1fr;
+    }
+    .outdoor-card {
+      height: 360px;
+    }
+  }
+</style>

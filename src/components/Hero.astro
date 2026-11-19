@@ -1,0 +1,328 @@
+---
+// Hero Section Component for Vortex Padel Club
+---
+
+<section class="hero-section" id="hero">
+  <div class="container hero-container">
+    <div class="hero-card card-rounded">
+      <!-- Background Graphic Court Lines -->
+      <svg class="court-lines-bg" viewBox="0 0 1280 680" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <line x1="80" y1="0" x2="80" y2="680" stroke="white" stroke-opacity="0.12" stroke-width="2"/>
+        <line x1="1200" y1="0" x2="1200" y2="680" stroke="white" stroke-opacity="0.12" stroke-width="2"/>
+        <line x1="0" y1="340" x2="1280" y2="340" stroke="white" stroke-opacity="0.12" stroke-width="3"/>
+        <line x1="640" y1="0" x2="640" y2="680" stroke="white" stroke-opacity="0.18" stroke-width="2" stroke-dasharray="10 10"/>
+        <circle cx="640" cy="340" r="120" stroke="white" stroke-opacity="0.08" stroke-width="2"/>
+      </svg>
+
+      <!-- Grid layout inside hero card -->
+      <div class="hero-content">
+        <!-- Left Column: Copy & Social Proof -->
+        <div class="hero-left">
+          <!-- Social Proof Avatar Badge -->
+          <div class="hero-community-badge">
+            <div class="avatar-stack">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Member avatar" class="avatar-img" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Member avatar" class="avatar-img" />
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Member avatar" class="avatar-img" />
+            </div>
+            <p class="community-text">
+              It's more fun together. Padel connects friends and builds new bonds.
+            </p>
+          </div>
+
+          <!-- Category tag pill -->
+          <div class="hero-tag-wrap">
+            <span class="badge-pill badge-pill-glass">Sport center</span>
+          </div>
+
+          <!-- Main Hero Headline -->
+          <h1 class="hero-title title-display">
+            Your Game, Your Style –<br />
+            Modern Padel Courts for<br />
+            Every Level
+          </h1>
+
+          <!-- CTAs -->
+          <div class="hero-action-row">
+            <button type="button" class="btn-neon hero-cta-btn open-booking-trigger">
+              <span>Book a court</span>
+              <span class="arrow-icon">↗</span>
+            </button>
+            <a href="#about" class="hero-secondary-link">
+              <span>Explore Club</span>
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Racket Flatlay Visual & Stat Cards -->
+        <div class="hero-right">
+          <!-- Racket Image Container -->
+          <div class="racket-visual-container">
+            <img 
+              src="https://images.unsplash.com/photo-1658723826297-fe4d1b1e6600?auto=format&fit=crop&w=1000&q=85" 
+              alt="Authentic Head Padel Rackets and Neon Balls on Electric Blue Court Turf" 
+              class="racket-flatlay-img"
+              loading="eager"
+            />
+            
+            <!-- Neon Accents -->
+            <div class="neon-ball-pulse" aria-hidden="true"></div>
+
+            <!-- Floating Stat Card on Right -->
+            <div class="hero-stat-card glass-panel-dark">
+              <div class="stat-item">
+                <span class="stat-number">12+</span>
+                <span class="stat-label">Panoramic Glass Courts</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number">1,200+</span>
+                <span class="stat-label">Active Club Members</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">WPT Standard Turf</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding-top: 16px;
+    padding-bottom: clamp(32px, 5vw, 64px);
+  }
+
+  .hero-card {
+    position: relative;
+    background: linear-gradient(135deg, #1d4ed8 0%, #1a56db 45%, #1642a8 100%);
+    color: #ffffff;
+    box-shadow: 0 20px 60px rgba(26, 86, 219, 0.3);
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .court-lines-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+    padding: clamp(32px, 5vw, 64px);
+  }
+
+  /* Left Column */
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-community-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(15, 23, 42, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 16px 6px 8px;
+    border-radius: var(--radius-pill);
+    max-width: fit-content;
+  }
+
+  .avatar-stack {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    margin-left: -8px;
+    object-fit: cover;
+  }
+
+  .avatar-img:first-child {
+    margin-left: 0;
+  }
+
+  .community-text {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.3;
+  }
+
+  .hero-tag-wrap {
+    margin-top: 4px;
+  }
+
+  .hero-title {
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .hero-action-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 12px;
+  }
+
+  .hero-cta-btn {
+    background: var(--color-neon);
+    color: var(--color-dark-panel);
+    padding: 14px 26px;
+    font-size: 0.92rem;
+    font-weight: 800;
+  }
+
+  .hero-cta-btn:hover {
+    background: var(--color-neon-hover);
+    color: var(--color-dark-panel);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 247, 44, 0.4);
+  }
+
+  .hero-secondary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 8px 12px;
+    transition: color 0.2s ease;
+  }
+
+  .hero-secondary-link:hover {
+    color: var(--color-neon);
+  }
+
+  /* Right Column Visual */
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .racket-visual-container {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 1 / 1;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .racket-flatlay-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .racket-visual-container:hover .racket-flatlay-img {
+    transform: scale(1.04);
+  }
+
+  .neon-ball-pulse {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-neon);
+    box-shadow: 0 0 20px var(--color-neon);
+    animation: neonPulse 2.5s infinite;
+  }
+
+  @keyframes neonPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+    50% {
+      transform: scale(1.4);
+      opacity: 0.5;
+    }
+  }
+
+  /* Floating Stat Card */
+  .hero-stat-card {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    padding: 12px 18px;
+    border-radius: var(--radius-card-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--color-neon);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  @media (max-width: 960px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      padding: 32px 24px;
+    }
+    .racket-visual-container {
+      max-width: 100%;
+      aspect-ratio: 16 / 10;
+    }
+  }
+</style>

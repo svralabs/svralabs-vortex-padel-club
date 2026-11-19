@@ -1,0 +1,46 @@
+:root {
+  /* Color Palette - Vortex Padel Club */
+  --color-court-blue: #1d4ed8;
+  --color-court-blue-dark: #1e40af;
+  --color-court-turf: #1a56db;
+  --color-court-turf-deep: #1642a8;
+  --color-neon: #d4f72c;
+  --color-neon-hover: #bde418;
+  --color-neon-glow: rgba(212, 247, 44, 0.4);
+  --color-dark-panel: #0b1220;
+  --color-dark-surface: #111a2e;
+  --color-dark-card: #152238;
+  --color-surface-light: #f8fafc;
+  --color-surface-white: #ffffff;
+  --color-surface-card: #f1f5f9;
+  
+  --color-text-main: #0f172a;
+  --color-text-light: #f8fafc;
+  --color-text-muted: #64748b;
+  --color-text-muted-dark: #94a3b8;
+  
+  --color-border-subtle: #e2e8f0;
+  --color-border-dark: #1e293b;
+  --color-border-glass: rgba(255, 255, 255, 0.15);
+
+  /* Radius */
+  --radius-pill: 9999px;
+  --radius-card: 28px;
+  --radius-card-sm: 20px;
+  --radius-card-xs: 14px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 8px 30px rgba(29, 78, 216, 0.25);
+  --shadow-neon: 0 6px 24px rgba(212, 247, 44, 0.35);
+
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Layout */
+  --container-max: 1360px;
+  --container-padding: clamp(16px, 4vw, 40px);
+  --section-spacing: clamp(64px, 8vw, 112px);
+}

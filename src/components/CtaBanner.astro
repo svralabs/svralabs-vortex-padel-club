@@ -1,0 +1,145 @@
+---
+// Final CTA Banner Component for Vortex Padel Club
+---
+
+<section class="cta-banner-section" id="membership">
+  <div class="container cta-container">
+    <div class="cta-banner-card card-rounded">
+      <!-- Background Panoramic Photo -->
+      <img 
+        src="https://images.unsplash.com/photo-1743456110628-6508997cf730?auto=format&fit=crop&w=1600&q=85" 
+        alt="Padel athlete lunging to hit a ball on electric blue padel court" 
+        class="cta-bg-img"
+        loading="lazy"
+      />
+      
+      <!-- Gradient Overlay for Legibility -->
+      <div class="cta-overlay"></div>
+
+      <!-- Banner Content -->
+      <div class="cta-content">
+        <h2 class="cta-title title-display">
+          Ready to play<br />with us ?
+        </h2>
+
+        <p class="cta-subtitle text-body-dark">
+          Experience padel like never before – friendly matches, training sessions, and a community that feels like family.
+        </p>
+
+        <div class="cta-actions">
+          <button type="button" class="btn-neon cta-join-btn open-booking-trigger">
+            <span>Join the Group</span>
+            <span class="arrow-icon">↗</span>
+          </button>
+          
+          <div class="member-perk-pill">
+            <span class="perk-dot"></span>
+            <span>Free intro session for new players</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-banner-section {
+    padding-block: var(--section-spacing);
+  }
+
+  .cta-banner-card {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(11, 18, 32, 0.25);
+  }
+
+  .cta-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .cta-banner-card:hover .cta-bg-img {
+    transform: scale(1.03);
+  }
+
+  .cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(11, 18, 32, 0.95) 0%, rgba(11, 18, 32, 0.8) 45%, rgba(11, 18, 32, 0.25) 100%);
+    z-index: 1;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 2;
+    padding: clamp(36px, 6vw, 72px);
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cta-title {
+    color: #ffffff;
+    line-height: 1.1;
+  }
+
+  .cta-subtitle {
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 500px;
+    line-height: 1.6;
+  }
+
+  .cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .cta-join-btn {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+
+  .member-perk-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .perk-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-neon);
+    box-shadow: 0 0 10px var(--color-neon);
+  }
+
+  @media (max-width: 768px) {
+    .cta-banner-card {
+      min-height: 420px;
+    }
+    .cta-overlay {
+      background: linear-gradient(180deg, rgba(11, 18, 32, 0.85) 0%, rgba(11, 18, 32, 0.95) 100%);
+    }
+  }
+</style>
